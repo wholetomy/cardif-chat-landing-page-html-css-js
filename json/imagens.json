@@ -1,7 +1,7 @@
 [
     {
         "cod_campanha": 386,
-        "titulo": "386.jpg"
+        "titulo": "386.png"
     },
     {
         "cod_campanha": 396,
@@ -13,7 +13,7 @@
     },
     {
         "cod_campanha": 399,
-        "titulo": "399.jpg"
+        "titulo": "399.png"
     },
     {
         "cod_campanha": 400,
@@ -77,7 +77,7 @@
     },
     {
         "cod_campanha": 455,
-        "titulo": "455.jpg"
+        "titulo": "455.png"
     },
     {
         "cod_campanha": 456,
@@ -89,7 +89,7 @@
     },
     {
         "cod_campanha": 458,
-        "titulo": "458.jpg"
+        "titulo": "458.png"
     },
     {
         "cod_campanha": 460,
@@ -97,7 +97,7 @@
     },
     {
         "cod_campanha": 461,
-        "titulo": "461.jpg"
+        "titulo": "461.png"
     },
     {
         "cod_campanha": 462,
@@ -138,6 +138,26 @@
     {
         "cod_campanha": 596,
         "titulo": "596.jpg"
+    },
+    {
+        "cod_campanha": 598,
+        "titulo": "598.png"
+    },
+    {
+        "cod_campanha": 610,
+        "titulo": "610.png"
+    },
+    {
+        "cod_campanha": 612,
+        "titulo": "612.png"
+    },
+    {
+        "cod_campanha": 614,
+        "titulo": "614.png"
+    },
+    {
+        "cod_campanha": 618,
+        "titulo": "618.png"
     },
     {
         "cod_campanha": 620,
