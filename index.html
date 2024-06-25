@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Cardif</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <style>
-        .error-message {
-            display: none;
-        }
-    </style>
 </head>
 <body>
     <div class="landingPageContainer">
@@ -17,30 +12,30 @@
             <div class="image">
                 <img id="logo" src="" alt="logo" />
             </div>
-            <div class="fieldsDiv">
-                <div class="fields">
+            <div class="fieldDiv">
+                <div class="field">
                     <span>Nome:</span>
                     <input type="text" id="nome" maxlength="100" />
                 </div>
-                <div class="fields">
+                <div class="field">
                     <span>CPF ou CNPJ?</span>
                     <select name="tipoDocumento" id="tipoDocumento">
                         <option value="CPF">CPF</option>
                         <option value="CNPJ">CNPJ</option>
                     </select>
                 </div>
-                <div class="fields">
+                <div class="field">
                     <span id="labelDocumento">CPF</span>
                     <input type="text" id="inputDocumento" maxlength="14" />
                     <p id="erroDocumento" class="error-message" style="color: red;">Formato inválido</p>
                 </div>
-                <div class="fields">
+                <div class="field">
                     <span>Assunto:</span>
                     <select name="assunto" id="assunto">
                         <option value=""></option>
                     </select>
                 </div>
-                <div class="fields">
+                <div class="field">
                     <button id="btnIniciarAtendimento">Iniciar atendimento</button>
                 </div>
                 <span>Horário de atendimento de segunda a sábado, das 9:00 às 21:00.</span>
