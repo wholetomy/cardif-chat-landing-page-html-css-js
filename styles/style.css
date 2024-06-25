@@ -93,4 +93,5 @@ body {
 
 .error-message {
     display: none;
+    color: red;
 }
