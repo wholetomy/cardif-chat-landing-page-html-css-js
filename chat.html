@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="oloswcdl-root"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var botParams = JSON.parse(localStorage.getItem('botParams')) || {
+                name: "",
+                identifier: "",
+                partnerId: null,
+                partnerName: "",
+                subject: ""
+            };
+
+            console.log('botParams', botParams);
+
+            window.olosWebChatInit = function (Botkit) {
+                window.Botkit = Botkit;
+                window.Botkit.boot({
+                    id: null,
+                    name: botParams.name,
+                    custom: {
+                        name: botParams.name,
+                        identifier: botParams.identifier,
+                        partnerId: botParams.partnerId,
+                        partnerName: botParams.partnerName,
+                        subject: botParams.subject
+                    }
+                });
+            };
+
+            (function (v, cid, gid, cstm, lv, ext, refURL, cfm) {
+                var id = 'oloswcdl-script', s = 'script', d = document;
+                var js, fjs = d.getElementsByTagName(s)[0];
+                var host = "https://olosbotsolutionstatic.blob.core.windows.net/webchat/botkit/v" + v;
+                if (d.getElementById(id)) { return }
+                js = d.createElement(s); js.id = id;
+                js.src = host + "/main.bundle.js?cid=" + cid + '&gid=' + gid + '&version=' + v + '&custom=' + cstm + '&lv=' + lv + '&ext=' + ext + '&use_local_history=1&use_history=1&keep_session=1&refURL=' + refURL + '&cfm=' + cfm;
+                fjs.parentNode.insertBefore(js, fjs);
+            }('3.4.1', '1675455316361', '86b1a-d6-42b-958-f9182', '', 'olosbotgwshrsbr001', 'closeButton:0,minimizeButton:0,autoStart:1', '', false));
+        });
+    </script>
+</body>
+
+</html>

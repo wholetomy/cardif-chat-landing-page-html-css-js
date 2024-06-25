@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "assunto": "Acompanhar análise do sinistro",
+      "st": 1
+    },
+    {
+      "id": 2,
+      "assunto": "Dúvidas sobre o seguro",
+      "st": 1
+    },
+    {
+      "id": 3,
+      "assunto": "Orientações sobre cancelamento",
+      "st": 1
+    },
+    {
+      "id": 4,
+      "assunto": "Outros",
+      "st": 1
+    },
+    {
+      "id": 5,
+      "assunto": "Reclamação",
+      "st": 1
+    },
+    {
+      "id": 6,
+      "assunto": "Orientações para abrir sinistro",
+      "st": 1
+    }
+  ]
+  
