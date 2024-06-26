@@ -12,13 +12,14 @@
     <div id="oloswcdl-root"></div>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            var botParams = JSON.parse(localStorage.getItem('botParams')) || {
-                name: "",
-                identifier: "",
-                partnerId: null,
-                partnerName: "",
-                subject: ""
-            };
+            var botParams = JSON.parse(localStorage.getItem('botParams'));
+
+            // Se botParams não existir ou se passou mais de 2 horas, redirecione para index.html
+            if (!botParams || (new Date().getTime() - botParams.timestamp) > 2 * 60 * 60 * 1000) {
+                localStorage.removeItem('botParams'); // Limpa o botParams expirado
+                window.location.href = 'index.html';
+                return;
+            }
 
             console.log('botParams', botParams);
 

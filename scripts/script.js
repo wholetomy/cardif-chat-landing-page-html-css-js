@@ -170,7 +170,8 @@ function configurarBotaoDeAtendimento() {
             identifier: valorDocumento,
             partnerId: partnerId,
             partnerName: '',
-            subject: assunto.value
+            subject: assunto.value,
+            timestamp: new Date().getTime()
         };
 
         localStorage.setItem('botParams', JSON.stringify(botParams));
@@ -178,3 +179,4 @@ function configurarBotaoDeAtendimento() {
         window.location.href = 'chat.html';
     });
 }
+
