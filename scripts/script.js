@@ -1,7 +1,7 @@
 window.onload = function () {
     PreencherImagemDoParceiro();
-    configurarValidadorDeDocumento();
-    configurarBotaoDeAtendimento();
+    ConfigurarValidadorDeDocumento();
+    ConfigurarBotaoDeAtendimento();
     PreencherDropDownDeAssuntos();
 };
 
@@ -13,7 +13,7 @@ function PreencherDropDownDeAssuntos() {
             const selectAssunto = document.getElementById('assunto');
             data.forEach(item => {
                 let option = document.createElement('option');
-                option.value = item.id;
+                option.value = item.assunto;
                 option.textContent = item.assunto;
                 selectAssunto.appendChild(option);
             });
@@ -26,7 +26,7 @@ function PreencherImagemDoParceiro() {
     const partnerId = urlParams.get('partner');
     if (!partnerId) {
         console.warn('Parâmetro "partner" não encontrado na URL. Usando fallback.');
-        exibirImagemFallback();
+        ExibirImagemFallback();
         return;
     }
     fetch('/json/imagens.json')
@@ -35,29 +35,29 @@ function PreencherImagemDoParceiro() {
             const imagem = data.find(item => item.cod_campanha == partnerId);
             if (imagem) {
                 const imagemUrl = `/images/${imagem.titulo}`;
-                exibirImagem(imagemUrl);
+                ExibirImagem(imagemUrl);
             } else {
                 console.warn(`Não foi encontrada uma imagem para o partner ${partnerId}. Usando fallback.`);
-                exibirImagemFallback();
+                ExibirImagemFallback();
             }
         })
         .catch(error => {
             console.error('Erro ao carregar o JSON de imagens:', error);
-            exibirImagemFallback();
+            ExibirImagemFallback();
         });
 }
 
-function exibirImagem(imagemUrl) {
+function ExibirImagem(imagemUrl) {
     const logoImg = document.getElementById('logo');
     logoImg.src = imagemUrl;
 }
 
-function exibirImagemFallback() {
+function ExibirImagemFallback() {
     const logoImg = document.getElementById('logo');
     logoImg.src = '/images/cardif_logo.png';
 }
 
-function configurarValidadorDeDocumento() {
+function ConfigurarValidadorDeDocumento() {
     const tipoDocumento = document.getElementById('tipoDocumento');
     const inputDocumento = document.getElementById('inputDocumento');
     const erroDocumento = document.getElementById('erroDocumento');
@@ -133,7 +133,7 @@ function ValidarCNPJ(cnpj) {
     return true;
 }
 
-function configurarBotaoDeAtendimento() {
+function ConfigurarBotaoDeAtendimento() {
     const btnIniciarAtendimento = document.getElementById('btnIniciarAtendimento');
     const nome = document.getElementById('nome');
     const inputDocumento = document.getElementById('inputDocumento');
