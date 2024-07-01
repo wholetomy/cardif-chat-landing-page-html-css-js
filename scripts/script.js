@@ -3,10 +3,11 @@ window.onload = function () {
     ConfigurarValidadorDeDocumento();
     ConfigurarBotaoDeAtendimento();
     PreencherDropDownDeAssuntos();
+    BloquearCampos();
 };
 
 function PreencherDropDownDeAssuntos() {
-    fetch('/json/assuntos.json')
+    fetch('./json/assuntos.json')
         .then(response => response.json())
         .then(data => {
             data.sort((a, b) => a.assunto.localeCompare(b.assunto));
@@ -29,7 +30,7 @@ function PreencherImagemDoParceiro() {
         ExibirImagemFallback();
         return;
     }
-    fetch('/json/imagens.json')
+    fetch('./json/imagens.json')
         .then(response => response.json())
         .then(data => {
             const imagem = data.find(item => item.cod_campanha == partnerId);
@@ -54,7 +55,7 @@ function ExibirImagem(imagemUrl) {
 
 function ExibirImagemFallback() {
     const logoImg = document.getElementById('logo');
-    logoImg.src = '/images/cardif_logo.png';
+    logoImg.src = './images/cardif_logo.png';
 }
 
 function ConfigurarValidadorDeDocumento() {
@@ -180,3 +181,17 @@ function ConfigurarBotaoDeAtendimento() {
     });
 }
 
+function BloquearCampos() {
+    var now = new Date();
+    var horaAtual = now.getHours();
+    
+    if (horaAtual < 9 || horaAtual >= 21) {
+        var campos = ["nome", "tipoDocumento", "inputDocumento", "assunto", "btnIniciarAtendimento"];
+        
+        campos.forEach(function(id) {
+            var campo = document.getElementById(id);
+            campo.disabled = true;
+            campo.classList.add("active");
+        });
+    }
+}

@@ -69,6 +69,11 @@ body {
     border: 1px solid #090909;
 }
 
+.field input.active,
+.field select.active {
+    cursor: not-allowed;
+}
+
 .field input:focus,
 .field select:focus {
     border: 2px solid #00965E;
@@ -89,6 +94,11 @@ body {
 .field button:hover {
     background-color: #00784B;
     transition: .1s all ease-in-out;
+}
+
+.field button.active {
+    background-color:#84817e;
+    cursor: not-allowed;
 }
 
 .error-message {
